@@ -177,7 +177,7 @@ str=$(ipfs id) && echo $str | cut -c10-61 > $PWD/data/id.txt
 wget -O temp/ygg.deb $yggdistr
 sudo dpkg -i temp/ygg.deb
 sudo sed -i "s/  Peers: \[\]/  Peers: \[\n    tls:\/\/ip4.01.msk.ru.dioni.su:9003\n  \]/g" /etc/yggdrasil/yggdrasil.conf
-sudo sed -i "s/  NodeInfo: {}/  NodeInfo: {\n    name: tibidoh$(cat $PWD/data/id.txt)\n}/g" /etc/yggdrasil/yggdrasil.conf
+sudo sed -i "s/  NodeInfo: {}/  NodeInfo: {\n    name: znano$(cat $PWD/data/id.txt)\n}/g" /etc/yggdrasil/yggdrasil.conf
 sudo systemctl restart yggdrasil
 sudo systemctl enable yggdrasil
 sudo chmod u+s $(which ping)
@@ -187,6 +187,6 @@ rm -rf temp
 mkdir temp
 (echo -n "$(date -u) Znano system is installed. ID=" && cat $PWD/data/id.txt) >> $PWD/data/log.txt
 ipfspub 'Initial message'
-ipfs pubsub pub tibidoh $PWD/data/log.txt
+ipfs pubsub pub znano $PWD/data/log.txt
 sleep 9
 sudo reboot
