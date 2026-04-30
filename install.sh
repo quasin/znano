@@ -162,7 +162,7 @@ sleep 9
 echo -e "$(sudo crontab -l)\n@reboot sleep 9; systemctl restart yggdrasil; echo \"\$(date -u) System is rebooted\" >> $PWD/data/log.txt\n* * * * * su $USER -c \"bash $PWD/bin/cron.sh\"" | sudo crontab -
 
 sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt install -y ca-certificates curl gnupg
-sudo rm /etc/apt/keyrings/nodesource.gpg
+sudo rm /etc/apt/keyrings/nodesource.gpg || echo "File not found, skipping..."
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 NODE_MAJOR=24
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
