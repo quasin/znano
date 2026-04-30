@@ -4,7 +4,7 @@ Znano - RSS data lake
 
 ### Requirements
 
-x86_64/aarch64/riscv64; Ubuntu 26.04; 2 core; 4GB RAM; 40GB SSD; 10mbps WAN; Open Ports TCP+UDP: 4001
+x86_64/aarch64/riscv64; Ubuntu 26.04; 2 core; 4GB RAM; 40GB SSD; 10mbps WAN; Open Ports TCP+UDP: 4002
 
 
 ### Installation
