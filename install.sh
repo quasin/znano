@@ -183,10 +183,6 @@ sudo systemctl enable yggdrasil
 sudo chmod u+s $(which ping)
 ping -6 -c 5 21e:a51c:885b:7db0:166e:927:98cd:d186
 
-# Refresh group membership so the user can use Docker without a logout/reboot
-echo "--> Refreshing Docker group permissions..."
-exec sg docker "$0"
-
 rm -rf temp
 mkdir temp
 (echo -n "$(date -u) Znano system is installed. ID=" && cat $PWD/data/id.txt) >> $PWD/data/log.txt
