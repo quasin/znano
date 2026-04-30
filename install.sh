@@ -20,7 +20,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y \
             pkg-config libssl-dev docker.io build-essential python3-dev \
             python3-pip python3-venv tmux cron ufw git net-tools fuse3 \
             unzip wget openssl curl jq
-        sudo DEBIAN_FRONTEND=noninteractive apt install -y docker-compose-v2
+        sudo DEBIAN_FRONTEND=noninteractive apt install -y docker-compose-v2 || echo "Package not found, skipping..."
 
         sudo usermod -aG docker "$USER"
         sudo systemctl enable --now docker
