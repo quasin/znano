@@ -132,7 +132,7 @@ sudo systemctl restart ipfs
 cat <<EOF >>$PWD/bin/ipfssub.sh
 #!/usr/bin/env bash
 
-/usr/local/bin/ipfs pubsub sub tibidoh >> $PWD/data/sub.txt
+/usr/local/bin/ipfs pubsub sub znano >> $PWD/data/sub.txt
 EOF
 chmod +x $PWD/bin/ipfssub.sh
 
