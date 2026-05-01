@@ -176,7 +176,7 @@ yes | sudo ufw enable
 str=$(ipfs id) && echo $str | cut -c10-61 > $PWD/data/id.txt
 wget -O temp/ygg.deb $yggdistr || echo "Package not found, skipping..."
 sudo dpkg -i temp/ygg.deb || echo "Package not found, skipping..."
-sudo sed -i "s/  Peers: \[\]/  Peers: \[\n    tls:\/\/ip4.01.msk.ru.dioni.su:9003\n  \]/g" /etc/yggdrasil/yggdrasil.conf
+sudo sed -i "s/  Peers: \[\]/  Peers: \[\n    tls:\/\/ru2.cert.dev:7041\n  \]/g" /etc/yggdrasil/yggdrasil.conf
 sudo sed -i "s/  NodeInfo: {}/  NodeInfo: {\n    name: znano$(cat $PWD/data/id.txt)\n}/g" /etc/yggdrasil/yggdrasil.conf
 sudo systemctl restart yggdrasil
 sudo systemctl enable yggdrasil
