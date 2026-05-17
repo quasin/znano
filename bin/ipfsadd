@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+dir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)/.."
+cd $dir/data/share
+ipfs add -r --nocopy "$1" >> index.txt
