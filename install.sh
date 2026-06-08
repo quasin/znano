@@ -181,7 +181,7 @@ sudo sed -i "s/  NodeInfo: {}/  NodeInfo: {\n    name: znano$(cat $PWD/data/id.t
 sudo systemctl restart yggdrasil
 sudo systemctl enable yggdrasil
 sudo chmod u+s $(which ping)
-ping -6 -c 5 21e:a51c:885b:7db0:166e:927:98cd:d186
+ping -6 -c 5 21e:a51c:885b:7db0:166e:927:98cd:d186 || echo "Yggdrasil is not pinging..."
 
 rm -rf temp
 mkdir temp
