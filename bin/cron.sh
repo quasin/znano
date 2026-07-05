@@ -8,6 +8,12 @@ if [ "$(date -u '+%H')" = "00" ] && [ "$(date -u '+%M')" = "00" ]; then
     echo "" > "$dir/data/sub.txt"
     hash=$(ipfs add -r --nocopy -Q "$dir/data/share/log")
     ipfspub $hash
+    for dir in apps/*/; do
+      if [ -f "$dir/daily.sh" ]; then
+        bash "$dir/daily.sh"
+      fi
+    done
+
 fi
 if [ "$(date -u '+%M')" = "00" ] || [ "$(date -u '+%M')" = "30" ]; then
     for dir in apps/*/; do
